@@ -17,4 +17,4 @@
 ###< symfony/phpunit-bridge ###
 
 /clover.xml
-/.idea/
+.idea/

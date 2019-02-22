@@ -27,7 +27,7 @@ class User
      */
     public function __construct(string $name, string $email)
     {
-        $this->name = $name;
+        $this->username = $name;
         $this->email = $email;
         $this->points = 0;
     }

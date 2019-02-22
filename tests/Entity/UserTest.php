@@ -18,5 +18,15 @@ final class UserTest extends TestCase
         $this->assertEquals('testUser', $userInstance->getUsername());
         $this->assertEquals('test@test.com', $userInstance->getEmail());
     }
+
+    public function testAddPoitns(): void
+    {
+        $userInstance = new User('testUser', 'test@test.com');
+
+        $this->assertEquals(0, $userInstance->getPoints());
+
+        $userInstance->addPoints(5);
+        $this->assertEquals(5, $userInstance->getPoints());
+    }
 }
 
