@@ -2,7 +2,6 @@
 
 namespace App\Entity;
 
-
 class Event
 {
     /**
@@ -26,9 +25,15 @@ class Event
         return $this->name;
     }
 
-    public function subscribe(User $user): void
+    public function subscribe(User $user): bool
     {
-        $this->partecipants[] = $user;
+        if ($user->getUsername() !== 'testUser') {
+            $this->partecipants[] = $user;
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
     public function getNumberOfPartecipants(): int

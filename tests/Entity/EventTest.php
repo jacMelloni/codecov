@@ -18,5 +18,13 @@ final class EventTest extends TestCase
         $this->assertEquals('testEvent', $event->getName());
         $this->assertEquals(0, $event->getNumberOfPartecipants());
     }
+
+    public function testSubscribe(): void
+    {
+        $user = new \App\Entity\User('name', 'mail');
+        $event = new Event('testEvent');
+
+        $this->assertEquals(true, $event->subscribe($user));
+    }
 }
 
